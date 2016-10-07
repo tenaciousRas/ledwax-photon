@@ -1,0 +1,50 @@
+{
+	"rbenv": {
+		"user_installs": [
+			{
+				"user": "vagrant",
+				"rubies": [
+					"2.2.1"
+				],
+				"global": "2.2.1",
+				"gems": {
+					"2.2.1": [
+						{
+							"name": "bundler"
+						}
+					]
+				}
+			}
+		]
+	},
+	"postgresql": {
+		"version": "9.4",
+		"enable_pgdg_apt": true,
+		"password": {
+			"postgres": "md532e12f215ba27cb750c9e093ce4b5127"
+		},
+		"config": {
+			"listen_addresses": "*"
+		},
+		"server": {
+			"packages": []
+		},
+		"client": {
+			
+		}
+	},
+	"database": {
+		"create": [
+			"encased_dev"
+		]
+	},
+	"nvm": {
+		"user_install": false,
+		"version": "4.6.0",
+		"alias_as_default": true,
+		"from_source": false
+	},
+	"build_essential": {
+		"compiletime": true
+	}
+}

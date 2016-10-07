@@ -1,0 +1,14 @@
+site "https://supermarket.chef.io/api/v1"
+
+cookbook 'user'
+cookbook 'apt', git: 'https://github.com/chef-cookbooks/apt'
+cookbook 'build-essential'
+cookbook 'database'
+#cookbook 'lsoft-postgres'
+cookbook 'nvm'
+cookbook 'install-nvm', path: './site-cookbooks'
+cookbook 'ark'
+cookbook 'particle_base', path: './site-cookbooks'
+cookbook 'ruby_build'
+cookbook 'rbenv', git: 'https://github.com/aminin/chef-rbenv'
+cookbook 'vim'
