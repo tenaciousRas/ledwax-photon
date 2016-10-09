@@ -10,8 +10,8 @@
 # tar xf gcc-arm-none-eabi-5_4-2016q3-20160926-src.tar.bz2
 # ~/bin/gcc-arm-embedded/gcc-arm-none-eabi-5_4-2016q2/bin/arm-none-eabi-gcc --version
 
-##arm-none-eabi-gcc (GNU Tools for ARM Embedded Processors) 5.4.3 20160926 (release) [ARM/##embedded-5-branch revision 240432]
-##Copyright (C) 2016 Free Software Foundation, Inc.
+##arm-none-eabi-gcc (GNU Tools for ARM Embedded Processors) 5.4.1 20160919 (release) [ARM/##embedded-5-branch revision 240432]
+##Copyright (C) 2015 Free Software Foundation, Inc.
 ##This is free software; see the source for copying conditions.  There is NO
 ##warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
@@ -23,7 +23,7 @@
 # git clone https://gitorious.org/dfu-util/dfu-util.git
 
 # cd dfu-util
-# sudo apt-get build-dep dfu-util
+# sudo apt-get libusb-1.0
 # ./autogen.sh
 # ./configure
 # make
