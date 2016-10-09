@@ -29,7 +29,8 @@ Vagrant.configure("2") do |config|
 
   # config.vm.network "public_network"
 
-  # config.vm.synced_folder "../data", "/vagrant_data"
+  config.vm.synced_folder "./src", "/home/vagrant/vagrant-host"
+  config.vm.synced_folder ".", "/vagrant", disabled: true
 
   config.vm.provider "virtualbox" do |vb|
     # Display the VirtualBox GUI when booting the machine
@@ -54,9 +55,10 @@ Vagrant.configure("2") do |config|
     chef.add_recipe "apt"
     chef.add_recipe "user"
     chef.add_recipe "build-essential"
-    chef.add_recipe "nvm"
     chef.add_recipe "install-nvm"
-    chef.add_recipe "particle_base"
+    chef.add_recipe "arm-gcc"
+    chef.add_recipe "particle-cli"
+    chef.add_recipe "dfu-util"
     chef.add_recipe "ruby_build"
     chef.add_recipe "rbenv::user"
     chef.add_recipe "rbenv::vagrant"
