@@ -1,0 +1,49 @@
+# nvm install 4.6.0
+# nvm use 4.6.0
+# npm install particle
+#
+# sudo apt-get install lib32z1 lib32ncurses5
+# sudo apt-get install lib32bz2-1.0
+# mkdir $HOME/bin/gcc-arm-embedded
+# cd $HOME/bin/gcc-arm-embedded
+# wget https://launchpad.net/gcc-arm-embedded/5.0/5-2016-q2-update/+download/gcc-arm-none-eabi-5_4-2016q3-20160926-linux.tar.bz2
+# tar xf gcc-arm-none-eabi-5_4-2016q3-20160926-src.tar.bz2
+# ~/bin/gcc-arm-embedded/gcc-arm-none-eabi-5_4-2016q2/bin/arm-none-eabi-gcc --version
+
+##arm-none-eabi-gcc (GNU Tools for ARM Embedded Processors) 5.4.3 20160926 (release) [ARM/##embedded-5-branch revision 240432]
+##Copyright (C) 2016 Free Software Foundation, Inc.
+##This is free software; see the source for copying conditions.  There is NO
+##warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+# mkdir $HOME/particle
+# cd $HOME/particle
+# git clone https://www.github.com/spark/core-communication-lib.git
+# git clone https://www.github.com/spark/core-firmware.git
+# git clone https://www.github.com/spark/core-common-lib.git
+# git clone https://gitorious.org/dfu-util/dfu-util.git
+
+# cd dfu-util
+# sudo apt-get build-dep dfu-util
+# ./autogen.sh
+# ./configure
+# make
+# sudo make install
+# cd ~
+
+# sudo dfu-util -l
+##dfu-util 0.8
+##
+##Copyright 2005-2009 Weston Schmidt, Harald Welte and OpenMoko Inc.
+##Copyright 2010-2014 Tormod Volden and Stefan Schmidt
+##This program is Free Software and has ABSOLUTELY NO WARRANTY
+##Please report bugs to dfu-util@lists.gnumonks.org
+##
+##dfu-util: unable to initialize libusb: -99
+
+
+# sudo apt-get install libarchive-zip-perl
+# cd ~/particle/core-firmware
+# git checkout master
+# PATH=~/bin/gcc-arm-embedded/gcc-arm-none-eabi-5_4-2016q2/bin/:$PATH && make
+# echo $?
+##0
