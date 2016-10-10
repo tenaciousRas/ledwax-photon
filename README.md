@@ -47,6 +47,9 @@ git submodule update
 - Windows not supported by all site-cookbooks, but it wouldn't take too long to add Windows support.
 - Vagrant 12.x
 - VirtualBox 5.x
+- Vagrant Chef plugin (vagrant-omnibus)
+- Librarian-Chef
+- Chef CLI Tools (optional, only librarian-chef required)
 - EclipseIDE or AtomIDE
 - npm for Grunt
 
@@ -54,6 +57,17 @@ NodeJS and Ruby are installedon the VM, so you'll be using them to run tests and
 
 This documentation assumes you have the above already configured and installed.
 
+#### Before Starting
+You'll need to install the Vagrant tools, plugins, and dependencies.  This project uses librarian-chef to manage Chef cookbooks dependencies.  After you've cloned the repo and its submodules, run librarian-chef from the project's root folder.
+
+This comand installs all the Chef cookbooks used by this project into [project-root]/cookbooks.  Beware as this will first clean/delete everything already in /cookbooks.
+
+```bash
+librarian-chef install
+```
+If the above command completes successfully then you should be ready to start the VM.  If it fails then you probably need to troubleshoot your librarian-chef, Vagrant, and/or NPM/NodeJS installation.  Common errors are incompatible toolchain versions, dependencies, user/group file permissions, and mis-matched/incomplete/inaccessible system symlinks and PATHing; all of which are currently beyond the scope of this document.
+
+#### Vagrant VM
 To start the VM:
 ```bash
 vagrant up
