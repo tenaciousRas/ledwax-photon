@@ -41,7 +41,54 @@ git submodule update
 ```
 
 ## Development Setup
-Once you've cloned the 
+
+### Requirements
+- Ubuntu 14+; Mac OS X 10.8+(?)
+- Windows not supported by all site-cookbooks, but it wouldn't take too long to add Windows support.
+- Vagrant 12.x
+- VirtualBox 5.x
+- EclipseIDE or AtomIDE
+- npm for Grunt
+
+NodeJS and Ruby are installedon the VM, so you'll be using them to run tests and the web UI.  However, you'll probably want runtimes installed in your development environment for things to work more smoothly in your IDE.  I suggest NVM and RVM for NodeJS and Ruby version management.
+
+This documentation assumes you have the above already configured and installed.
+
+To start the VM:
+```bash
+vagrant up
+```
+
+It can take up to 45-60 minutes to finish this command the first time.  The reason for this is Vagrant has to download the VM image, and then provision everything on the machine.  Things will run faster after the first time you bring the VM up.
+
+Connect to VM:
+```bash
+vagrant ssh
+```
+
+To stop the VM:
+```bash
+vagrant suspend
+```
+
+Stopping the VM frees resources on the host machine but leaves the VM provisioned.  You can also destroy the VM and restart it from scratch, as well re-provision it.  See the Vagrant website for more information on Vagrant usage.
+
+### Vagrant
+The vagrant box provided has the following specs:
+- Ubuntu Trusty/64 (ubuntu/trusty64 from Hashicorp Atlas Vagrant box provider)
+- Chef
+- Chef-Librarian for Chef dependencies.
+- provisioned with
+-- nodeJS 4.x LTS
+-- Ruby 2.x
+-- build-essential
+-- git
+-- gcc-arm-embedded
+-- particle-cli
+-- dfu-util
+-- VM shares
+-- /home/vagrant/vagrant-host points at src/ of this repository
+-- default /vagrant share on VM is disabled
 
 ## Firmware Configuration
 This README covers setting up this codebase and Vagrant host machine.  To run a LEDWax Photon cloud you need some Particle Photon hardware loaded with the LEDWax Photon firmware.  You'll need to setup hardware and firmware according to [ledwax-photon-firmware documentation](https://docs.particle.io/reference/api/#get-a-variable-value "ledwax-photon-firmware documentation").
@@ -102,15 +149,27 @@ Thanks to Particle and Sparkfun for supporting open-source hardware and firmware
 - Copyright: 2016, Free Beachler
 
 ```
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
+Copyright (c) 2015-2016, Free Beachler, Longevity Software LLC.
+All rights reserved.
 
-    http://www.apache.org/licenses/LICENSE-2.0
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+    * Redistributions of source code must retain the above copyright
+      notice, this list of conditions and the following disclaimer.
+    * Redistributions in binary form must reproduce the above copyright
+      notice, this list of conditions and the following disclaimer in the
+      documentation and/or other materials provided with the distribution.
+    * Neither the name of Free Beachler, Longevity Software LLC, nor the
+      names of its contributors may be used to endorse or promote products
+      derived from this software without specific prior written permission.
 
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL Free Beachler BE LIABLE FOR ANY
+DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
