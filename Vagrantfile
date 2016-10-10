@@ -1,10 +1,9 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-# TODO: add:  export PATH=$PATH:/usr/lib/postgresql/9.4/bin
-# TODO: had to add vbenv-vars plugin for compose/ws-app
-
 require 'json'
+
+# TODO: add:  export PATH=$PATH:/usr/lib/postgresql/9.4/bin
 
 # All Vagrant configuration is done below. The "2" in Vagrant.configure
 # configures the configuration version (we support older styles for
@@ -15,8 +14,7 @@ Vagrant.configure("2") do |config|
   config.vm.box_version = "20160809.1.0"
 
   config.vm.provision :shell, path: "bootstrap.sh"
-
-  # config.vm.box_check_update = false
+  config.vm.box_check_update = false
 
   config.vm.network "forwarded_port", guest: 80, host: 4567
   config.vm.network "forwarded_port", guest: 3000, host:3001
@@ -56,7 +54,7 @@ Vagrant.configure("2") do |config|
     chef.add_recipe "user"
     chef.add_recipe "build-essential"
     chef.add_recipe "install-nvm"
-    chef.add_recipe "arm-gcc"
+    chef.add_recipe "gcc-arm-embedded"
     chef.add_recipe "particle-cli"
     chef.add_recipe "dfu-util"
     chef.add_recipe "ruby_build"
