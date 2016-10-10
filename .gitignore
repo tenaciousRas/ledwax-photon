@@ -22,13 +22,13 @@ Thumbs.db
 **/*.sw[a-z]
 **/*.bak
 **/*.BAK
+**/*BAK
 REVISION
 TAGS*
 tmtags
 *_flymake.*
 *_flymake
 *.tmproj
-.project
 .settings
 mkmf.log
 
@@ -48,17 +48,9 @@ mkmf.log
 ###########
 .watchr
 .rspec
-#spec/*
-#spec/fixtures/*
-#test/*
-#features/*
-#examples/*
-#Guardfile
-#Procfile
 .kitchen*
 .rubocop.yml
-#Rakefile
-.travis.yml
+#.travis.yml
 .foodcritic
 .codeclimate.yml
 
@@ -73,7 +65,6 @@ mkmf.log
 #############
 **/*.lock
 cookbooks/*
-**/tmp
 .vagrant
 
 # Policyfile #
@@ -86,3 +77,12 @@ cookbooks/*
 .colander
 .strainer
 
+# NodeJS #
+##########
+**/node_modules
+
+# Project Specific #
+####################
+**/*.tmp
+**/*tmp
+**/*cache
