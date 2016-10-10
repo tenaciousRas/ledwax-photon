@@ -1,0 +1,18 @@
+[submodule "site-cookbooks/particle-cli"]
+	path = site-cookbooks/particle-cli
+	url = git@github.com:tenaciousRas/chef-particle-cli.git
+[submodule "site-cookbooks/gcc-arm-embedded"]
+	path = site-cookbooks/gcc-arm-embedded
+	url = git@github.com:tenaciousRas/chef-gcc-arm-embedded.git
+[submodule "site-cookbooks/dfu-util"]
+	path = site-cookbooks/dfu-util
+	url = git@github.com:tenaciousRas/chef-dfu-util.git
+[submodule "src/web-ui"]
+	path = src/web-ui
+	url = git@github.com:tenaciousRas/ledwax-web-ui.git
+[submodule "src/emulator"]
+	path = src/emulator
+	url = git@github.com:tenaciousRas/ledwax-photon-emulator.git
+[submodule "src/firmware"]
+	path = src/firmware
+	url = git@github.com:tenaciousRas/ledwax-photon-firmware.git
