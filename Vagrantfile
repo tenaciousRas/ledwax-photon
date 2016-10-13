@@ -16,12 +16,13 @@ Vagrant.configure("2") do |config|
   config.vm.provision :shell, path: "bootstrap.sh"
   config.vm.box_check_update = false
 
-  config.vm.network "forwarded_port", guest: 80, host: 4567
-  config.vm.network "forwarded_port", guest: 3000, host:3001
-  config.vm.network "forwarded_port", guest: 4000, host:4001
-  config.vm.network "forwarded_port", guest: 5432, host: 5433
-  config.vm.network "forwarded_port", guest: 6432, host: 6433
-  config.vm.network "forwarded_port", guest: 15432, host: 15433
+  config.vm.network :forwarded_port, guest: 80, host: 4567
+  config.vm.network :forwarded_port, guest: 3000, host:3001
+  config.vm.network :forwarded_port, guest: 4000, host:4001
+  config.vm.network :forwarded_port, guest: 8000, host:8001
+  config.vm.network :forwarded_port, guest: 5432, host: 5433
+  config.vm.network :forwarded_port, guest: 6432, host: 6433
+  config.vm.network :forwarded_port, guest: 15432, host: 15433
 
   # config.vm.network "private_network", ip: "192.168.33.10"
 
@@ -46,28 +47,24 @@ Vagrant.configure("2") do |config|
 
   # Use Chef Solo to provision our virtual machine
   config.vm.provision :chef_solo do |chef|
-    chef.cookbooks_path = ["cookbooks", "site-cookbooks"]
+    chef.cookbooks_path = ["cookbooks"]
     chef.version = '12.10.24'
     chef.channel = 'stable'
 
     chef.add_recipe "apt"
     chef.add_recipe "user"
+    chef.add_recipe "group"
     chef.add_recipe "build-essential"
     chef.add_recipe "install-nvm"
     chef.add_recipe "gcc-arm-embedded"
     chef.add_recipe "particle-cli"
     chef.add_recipe "dfu-util"
+    chef.add_recipe "lsoft-postgres"
     chef.add_recipe "ruby_build"
     chef.add_recipe "rbenv::user"
     chef.add_recipe "rbenv::vagrant"
     chef.add_recipe "vim"
-#    chef.add_recipe "postgresql::ruby"
-#    chef.add_recipe "postgresql::server"
-#    chef.add_recipe "postgresql::client"
-#    chef.add_recipe "lsoft-postgres"
 
-    # Install Ruby 2.2.1 and Bundler
-    # Set a default root password for postgres to make things simple
     file = File.read(File.dirname(File.expand_path(__FILE__)) + '/vagrant_chef_config.json')
     chef.json = JSON.parse file
   end

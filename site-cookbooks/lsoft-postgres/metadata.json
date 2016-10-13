@@ -1,0 +1,50 @@
+{
+  "name": "lsoft-postgres",
+  "description": "Installs and configures postgresql for servers",
+  "long_description": "Description\n===========\n\nInstalls and configures PostgreSQL as a a server.",
+  "maintainer": "Longevity Software, LLC",
+  "maintainer_email": "longevitysoft@gmail.com",
+  "license": "Apache 2.0",
+  "platforms": {
+    "ubuntu": "<= 16.04",
+    "debian": ">= 0.0.0",
+    "fedora": ">= 0.0.0",
+    "suse": ">= 0.0.0",
+    "opensuse": ">= 0.0.0",
+    "amazon": ">= 0.0.0",
+    "redhat": "~> 6.0",
+    "centos": "~> 6.0",
+    "scientific": "~> 6.0",
+    "oracle": "~> 6.0"
+  },
+  "dependencies": {
+    "postgresql":  ">=4.0.0"
+  },
+  "recommendations": {
+
+  },
+  "suggestions": {
+
+  },
+  "conflicting": {
+
+  },
+  "providing": {
+
+  },
+  "replacing": {
+
+  },
+  "attributes": {
+
+  },
+  "groupings": {
+
+  },
+  "recipes": {
+    "lsoft_postgres": "Includes postgresql::server, postgresql::client"
+  },
+  "version": "1.0.0",
+  "source_url": "https://github.com/",
+  "issues_url": "https://github.com/"
+}

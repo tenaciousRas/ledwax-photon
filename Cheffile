@@ -1,9 +1,12 @@
 site "https://supermarket.chef.io/api/v1"
 
 cookbook 'user'
+cookbook 'group'
 cookbook 'apt', git: 'https://github.com/chef-cookbooks/apt'
 cookbook 'build-essential'
 cookbook 'database'
+cookbook 'lsoft-postgres', path: './site-cookbooks/lsoft-postgres'
+cookbook 'postgresql'
 cookbook 'nvm'
 cookbook 'install-nvm', path: './site-cookbooks/install-nvm'
 cookbook 'ark'

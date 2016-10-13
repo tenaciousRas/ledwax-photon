@@ -1,0 +1,9 @@
+node.override['postgresql']['version'] = '9.4'
+node.override['postgresql']['client']['packages'] = ["postgresql-client-#{node['postgresql']['version']}"]
+node.override['postgresql']['server']['packages'] = ["postgresql-client-common", "postgresql-common", "postgresql-#{node['postgresql']['version']}"]
+node.override['postgresql']['contrib']['packages'] = ["postgresql-contrib-#{node['postgresql']['version']}"]
+node.override['postgresql']['dir'] = "/var/lib/pgsql/#{node['postgresql']['version']}/data"
+node.override['postgresql']['server']['service_name'] = "postgresql"
+node.override['postgresql']['password']['postgres'] = "#{node['postgresql']['password']['postgres']}"
+node.override['postgresql']['run_list'] = node['postgresql']['run_list']
+node.override['postgresql']['enable_pgdg_apt'] = node['postgresql']['enable_pgdg_apt']
