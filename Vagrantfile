@@ -10,14 +10,19 @@ require 'json'
 # backwards compatibility). Please don't change it unless you know what
 # you're doing.
 Vagrant.configure("2") do |config|
-  config.vm.box = "ubuntu/trusty64"
-  config.vm.box_version = "20160809.1.0"
+#  config.vm.box = "ubuntu/trusty64"
+#  config.vm.box_version = "20160809.1.0"
+  config.vm.box = "lsoft/linux-mint-17-3-cinnamon-64-baremetal"
+  config.vm.box_version = "0"
 
   config.vm.provision :shell, path: "bootstrap.sh"
   config.vm.box_check_update = false
 
   config.vm.network :forwarded_port, guest: 80, host: 4567
   config.vm.network :forwarded_port, guest: 3000, host:3001
+  config.vm.network :forwarded_port, guest: 3001, host:3002
+  config.vm.network :forwarded_port, guest: 3002, host:3003
+  config.vm.network :forwarded_port, guest: 3003, host:3004
   config.vm.network :forwarded_port, guest: 4000, host:4001
   config.vm.network :forwarded_port, guest: 8000, host:8001
   config.vm.network :forwarded_port, guest: 5432, host: 5433
@@ -33,7 +38,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.provider "virtualbox" do |vb|
     # Display the VirtualBox GUI when booting the machine
-    vb.gui = false
+    vb.gui = true
     # Customize the amount of memory on the VM:
     vb.memory = "2048"
   end

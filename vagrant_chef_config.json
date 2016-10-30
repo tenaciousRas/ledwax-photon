@@ -1,5 +1,8 @@
 {
 	"rbenv": {
+		"rvm_download": {
+			"enable": false
+		},
 		"user_installs": [
 			{
 				"user": "vagrant",
@@ -8,11 +11,6 @@
 				],
 				"global": "2.2.1",
 				"gems": {
-					"2.2.1": [
-						{
-							"name": "bundler"
-						}
-					]
 				}
 			}
 		]
@@ -29,7 +27,7 @@
 			"listen_addresses": "*"
 		},
 		"server": {
-			"packages": []
+			"packages": ["postgres-xc"]
 		},
 		"client": {
 		}
