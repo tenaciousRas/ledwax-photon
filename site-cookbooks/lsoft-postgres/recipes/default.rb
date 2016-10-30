@@ -64,6 +64,10 @@ directory new_datadir do
   recursive true
 end
 
+include_recipe 'postgresql::apt_pgdg_postgresql'
+include_recipe 'postgresql::client'
+include_recipe 'postgresql::server'
+
 # Create new cluster with new_datadir
 execute 'create base database in data_directory' do
   user username
@@ -72,11 +76,8 @@ execute 'create base database in data_directory' do
     "#{node['postgresql']['config']['data_directory']}"
   not_if do
     ::FileTest.exist?(
-      File.join(node['postgresql']['config']['data_directory'], 'PG_VERSION')
+      File.join(node['postgresql']['config']['data_directory'], 'pg_hba.conf')
     )
   end
 end
 
-include_recipe 'postgresql::apt_pgdg_postgresql'
-include_recipe 'postgresql::client'
-include_recipe 'postgresql::server'
