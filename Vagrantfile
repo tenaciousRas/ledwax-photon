@@ -18,14 +18,23 @@ Vagrant.configure("2") do |config|
   config.vm.provision :shell, path: "bootstrap.sh"
   config.vm.box_check_update = false
 
+  # default http
   config.vm.network :forwarded_port, guest: 80, host: 4567
+  # middleware API port
   config.vm.network :forwarded_port, guest: 3000, host:3001
+  # middleware public-web-ui port
+  config.vm.network :forwarded_port, guest: 8000, host:8001
+  # pgsql port
+  config.vm.network :forwarded_port, guest: 5432, host: 5433
+  # karma monitor port
+  config.vm.network :forwarded_port, guest: 9876, host:9877
+  # selenium standalone server port
+  config.vm.network :forwarded_port, guest: 54299, host:54300
+  # more ports for unexpected use
   config.vm.network :forwarded_port, guest: 3001, host:3002
   config.vm.network :forwarded_port, guest: 3002, host:3003
   config.vm.network :forwarded_port, guest: 3003, host:3004
   config.vm.network :forwarded_port, guest: 4000, host:4001
-  config.vm.network :forwarded_port, guest: 8000, host:8001
-  config.vm.network :forwarded_port, guest: 5432, host: 5433
   config.vm.network :forwarded_port, guest: 6432, host: 6433
   config.vm.network :forwarded_port, guest: 15432, host: 15433
 
