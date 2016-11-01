@@ -7,12 +7,12 @@
 [submodule "site-cookbooks/dfu-util"]
 	path = site-cookbooks/dfu-util
 	url = git@github.com:tenaciousRas/chef-dfu-util.git
-[submodule "src/web-ui"]
-	path = src/web-ui
+[submodule "vagrant-share/web-ui"]
+	path = vagrant-share/web-ui
 	url = git@github.com:tenaciousRas/ledwax-web-ui.git
-[submodule "src/emulator"]
-	path = src/emulator
+[submodule "vagrant-share/emulator"]
+	path = vagrant-share/emulator
 	url = git@github.com:tenaciousRas/ledwax-photon-emulator.git
-[submodule "src/firmware"]
-	path = src/firmware
+[submodule "vagrant-share/firmware"]
+	path = vagrant-share/firmware
 	url = git@github.com:tenaciousRas/ledwax-photon-firmware.git
