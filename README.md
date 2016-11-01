@@ -12,11 +12,11 @@ This is the parent repository for all of the LEDWax for Particle Photon source c
 2) 1)  A REST API (backend).
 2) 2) An AngularJS Web UI (frontend) that provides a user-friendly way to control LEDWax hardware.
 3)  LEDWax-photon emulator.  An emulator for testing the REST API and Web UI.
-4)  Vagrant development environment for firmware and web UI development.
+4)  Vagrant Virtual Machine (VM) for firmware and web UI development.
 
-The Vagrant box comes with a GUI-version of Linux Mint 17.3 and provisions particle-cli, dfu-util, gcc-arm-embedded, nodeJS, npm, and Ruby, amongst other packages.
+The Vagrant VM comes with a GUI-version of Linux Mint 17.3 and provisions particle-cli, dfu-util, gcc-arm-embedded, nodeJS, npm, and Ruby, posgresql-9.4, vim, and other packages.
 
-You can do practically everything needed for LEDWax and Particle IoT development with this Vagrant VM.
+Practically everything needed for LEDWax and Particle IoT development is supported with this Vagrant VM.
 1)  Build LEDWax Photon firmware.  Build any Particle-photon firmware.
 2)  Push LEDWax Photon firmware to a Particle Cloud Server.
 3)  Build/debug/maintain the LEDWax REST API.
@@ -64,14 +64,14 @@ git submodule update
 - EclipseIDE or AtomIDE
 - npm for Grunt
 
-NodeJS and Ruby are installedon the VM, so you'll be using them to run tests and the web UI.  However, you'll probably want runtimes installed in your development environment for things to work more smoothly in your IDE.  I suggest NVM and RVM for NodeJS and Ruby version management.
+NodeJS and Ruby are installed on the VM, so you'll be using them to run tests and the web UI.  You'll probably want runtimes installed in your development environment for things to work more smoothly in your IDE.  I suggest NVM and RVM for NodeJS and Ruby version management.
 
 This documentation assumes you have the above already configured and installed.
 
 #### Before Starting
 You'll need to install the Vagrant tools, plugins, and dependencies.  This project uses librarian-chef to manage Chef cookbooks dependencies.  After you've cloned the repo and its submodules, run librarian-chef from the project's root folder.
 
-This comand installs all the Chef cookbooks used by this project into [project-root]/cookbooks.  Beware as this will first clean/delete everything already in /cookbooks.
+This command installs all the Chef cookbooks used by this project into [project-root]/cookbooks.  Beware as this will first clean/delete everything already in /cookbooks.
 
 ```bash
 librarian-chef install
@@ -79,6 +79,8 @@ librarian-chef install
 If the above command completes successfully then you should be ready to start the VM.  If it fails then you probably need to troubleshoot your librarian-chef, Vagrant, and/or NPM/NodeJS installation.  Common errors are incompatible toolchain versions, dependencies, user/group file permissions, and mis-matched/incomplete/inaccessible system symlinks and PATHing; all of which are currently beyond the scope of this document.
 
 #### Vagrant VM
+This repository comes with a vagrant development environment to save you the trouble of having to install your own development environment.
+
 To start the VM:
 ```bash
 vagrant up
@@ -100,7 +102,9 @@ Stopping the VM frees resources on the host machine but leaves the VM provisione
 
 ### Vagrant
 The vagrant box provided has the following specs:
-- Ubuntu Trusty/64 (ubuntu/trusty64 from Hashicorp Atlas Vagrant box provider)
+- Linux Mint 17.3/64 (lsoft/linux-mint-17-3-cinnamon-64 from Hashicorp Atlas Vagrant box provider)
+- - Ubuntu Trusty/64 is tested and known to work (ubuntu/trusty64 from Hashicorp Atlas Vagrant box provider). **However**, only the middleware can be tested with a headless OS.  For full e2e testing a GUI is required to run Karma and ProtractorJS tests in Firefox.
+- - Any Ubuntu 16.x or LinuxMint 18.x should work per the same headless/GUI note above.
 - Chef
 - Chef-Librarian for Chef dependencies.
 - provisioned with
