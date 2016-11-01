@@ -1,6 +1,6 @@
 #LEDWax for Particle Photon
 
-##Cloudy LEDs
+##LEDs On the Cloud
 
 LEDWax is an IoT LED controller with support for PWM LEDs and WS28xx LED Strips.  LEDWax Photon is implemented to run on Particle Photon devices.
 
