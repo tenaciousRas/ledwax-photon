@@ -124,7 +124,7 @@ This README covers setting up this codebase and Vagrant host machine.  To run a 
 
 ***
 # Develop & Contribute
-The "master" branch is not yet considered stable.  Stability of this repo is defined by stability of the Vagrant host and related Chef LWRPs.
+The "master" branch is considered stable.  Stability of this repo is defined by stability of the Vagrant host and *all* related Chef LWRPs in Cheffile.  The LEDWax git submodules referenced here have their own versions and roadmaps.
 
 ### Generate documentation
 TODO
