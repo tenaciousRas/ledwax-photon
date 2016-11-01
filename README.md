@@ -31,16 +31,6 @@ Practically everything needed for LEDWax and Particle IoT development is support
 5)  Provisioned development environment.
 
 ## Getting Started
-The complexity of setting up this system is approximately between non-trivial and not-very-difficult.  From a high-level, from end-to-end, these steps will take you from scratch to running IoT LED Strips w/PWM support and a Web-based UI.
-
-1) Setup a local Particle Photon cloud on a RaspberryPi (RPi).
-2) git clone this repository (See below) to another machine (or your RPi cloud server -- just be careful how much free space you have on your RPi cloud server).
-3) Setup your Particle Photon IoT hardware and firmware according to [ledwax-photon-firmware documentation](https://docs.particle.io/reference/api/#get-a-variable-value "ledwax-photon-firmware documentation").
-4) Deploy this web-ui to your RPi Particle Cloud Server, or another machine.  You can run it on any machine, but the WebUi is lightweight enough to run alongside the Particle Cloud Server.
-
-### Non-Local (Particle) Cloud Server Setup
-There is no reason you can't use LEDWax Photon with the Particle Cloud.  It's just that I use a local cloud, so I don't have a readily available testing platform.
-
 ### Cloning this repo
 This repository contains git submodules.  To get all of the code you need run this:
 
@@ -52,7 +42,6 @@ git submodule update
 ```
 
 ## Development Setup
-
 ### Requirements
 - Ubuntu 14+; Mac OS X 10.8+(?)
 - Windows not supported by all site-cookbooks, but it wouldn't take too long to add Windows support.
@@ -119,8 +108,21 @@ The vagrant box provided has the following specs:
 -- /home/vagrant/vagrant-host points at src/ of this repository
 -- default /vagrant share on VM is disabled
 
+## Start LEDWax REST API and Web UI.
+Once the VM is up and running, you can SSH into it and run the LEDWax REST API and Web UI with a simple command.
+
+Connect to VM:
+```bash
+vagrant ssh
+```
+
+Start the LEDWax server:
+```bash
+cd vagrant-host/web-ui/ && npm start
+```
+
 ## Firmware Configuration
-This README covers setting up this codebase and Vagrant host machine.  To run a LEDWax Photon cloud you need some Particle Photon hardware loaded with the LEDWax Photon firmware.  You'll need to setup hardware and firmware according to [ledwax-photon-firmware documentation](https://docs.particle.io/reference/api/#get-a-variable-value "ledwax-photon-firmware documentation").
+This README covers setting up this codebase and Vagrant host machine.  To run a LEDWax Photon cloud you need some Particle Photon hardware (https://store.particle.io/) loaded with the LEDWax Photon firmware.  The LEDWax firmware is in the "firmware" submodule of this repository.  You'll need to setup hardware and firmware according to [ledwax-photon-firmware documentation](https://github.com/tenaciousRas/ledwax-photon-firmware "ledwax-photon-firmware documentation").
 
 ***
 # Develop & Contribute
