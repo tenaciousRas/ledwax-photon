@@ -42,7 +42,12 @@ Vagrant.configure("2") do |config|
 
   # config.vm.network "public_network"
 
-  config.vm.synced_folder "./src", "/home/vagrant/vagrant-host"
+  # share code
+  config.vm.synced_folder "./vagrant-share", "/home/vagrant/vagrant-host"
+  # share .git -> vagrant-dot-git
+  # set GIT_DIR to /home/vagrant/vagrant-dot-git to access git submodules from VM
+  config.vm.synced_folder "./.git", "/home/vagrant/vagrant-dot-git"
+  # disable default so VM clients can't nuke themselves
   config.vm.synced_folder ".", "/vagrant", disabled: true
 
   config.vm.provider "virtualbox" do |vb|

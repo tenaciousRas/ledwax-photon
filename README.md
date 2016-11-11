@@ -7,28 +7,29 @@ LEDWax is an IoT LED controller with support for PWM LEDs and WS28xx LED Strips.
 LEDWax for Particle Photon has been designed for use with a local cloud, which usually consists of 1+ Photons connected to an RPi running Particle Cloud Server, all connected to a home WiFi network (preferably behind a firewall).  LEDWax is also designed to work with the Particle public cloud.
 
 This is the parent repository for all of the LEDWax for Particle Photon source code.  This repository includes these components:
-1)  LEDWax-photon firmware.  C++ firmware that provides a REST API on the Particle Photon IoT devices.
-2)  LEDWax-photon web-ui.  A HapiJS website that provides two websites:
-2) 1)  A REST API (backend).
-2) 2) An AngularJS Web UI (frontend) that provides a user-friendly way to control LEDWax hardware.
-3)  LEDWax-photon emulator.  An emulator for testing the REST API and Web UI.
-4)  Vagrant Virtual Machine (VM) for firmware and web UI development.
+1. LEDWax-photon firmware.  C++ firmware that provides a REST API on the Particle Photon IoT devices.
+2. LEDWax-photon web-ui.  A HapiJS website that provides two websites:
+2. 1. A REST API (backend).
+2. 2. An AngularJS Web UI (frontend) that provides a user-friendly way to control LEDWax hardware.
+3. LEDWax-photon emulator.  An emulator for testing the REST API and Web UI.
+4. Vagrant Virtual Machine (VM) for firmware and web UI development.
 
 The Vagrant VM comes with a GUI-version of Linux Mint 17.3 and provisions particle-cli, dfu-util, gcc-arm-embedded, nodeJS, npm, and Ruby, posgresql-9.4, vim, and other packages.
 
 Practically everything needed for LEDWax and Particle IoT development is supported with this Vagrant VM.
-1)  Build LEDWax Photon firmware.  Build any Particle-photon firmware.
-2)  Push LEDWax Photon firmware to a Particle Cloud Server.
-3)  Build/debug/maintain the LEDWax REST API.
-4)  Build/debug/maintain the LEDWax Web UI.
-5)  Test the REST API and Web UI with unit and end-to-end (e2e) tests.
+1. Build LEDWax Photon firmware.  Build any Particle-photon firmware.
+2. Push LEDWax Photon firmware to a Particle Cloud Server.
+3. Build/debug/maintain the LEDWax REST API.
+4. Build/debug/maintain the LEDWax Web UI.
+5. Test the REST API and Web UI with unit and end-to-end (e2e) tests.
 
 ## Features
-1)  Cloud-based IoT.
-2)  Animated LED strip control.
-3)  Support for a variety of LED hardware.
-4)  Modular, multi-layered architecture.
-5)  Provisioned development environment.
+
+1. Cloud-based IoT.
+2. Animated LED strip control.
+3. Support for a variety of LED hardware.
+4. Modular, multi-layered architecture.
+5. Provisioned development environment.
 
 ## Getting Started
 ### Cloning this repo
@@ -51,7 +52,6 @@ git submodule update
 - Librarian-Chef
 - Chef CLI Tools (optional, only librarian-chef required)
 - EclipseIDE or AtomIDE
-- npm for Grunt
 
 NodeJS and Ruby are installed on the VM, so you'll be using them to run tests and the web UI.  You'll probably want runtimes installed in your development environment for things to work more smoothly in your IDE.  I suggest NVM and RVM for NodeJS and Ruby version management.
 
