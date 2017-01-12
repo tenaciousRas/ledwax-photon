@@ -7,16 +7,18 @@ LEDWax is an IoT LED controller with support for PWM LEDs and WS28xx LED Strips.
 LEDWax for Particle Photon has been designed for use with a local cloud, which usually consists of 1+ Photons connected to an RPi running Particle Cloud Server, all connected to a home WiFi network (preferably behind a firewall).  LEDWax is also designed to work with the Particle public cloud.
 
 This is the parent repository for all of the LEDWax for Particle Photon source code.  This repository includes these components:
+
 1. LEDWax-photon firmware.  C++ firmware that provides a REST API on the Particle Photon IoT devices.
 2. LEDWax-photon web-ui.  A HapiJS website that provides two websites:
-2. 1. A REST API (backend).
-2. 2. An AngularJS Web UI (frontend) that provides a user-friendly way to control LEDWax hardware.
+  1. A REST API (backend).
+  2. An AngularJS Web UI (frontend) that provides a user-friendly way to control LEDWax hardware.
 3. LEDWax-photon emulator.  An emulator for testing the REST API and Web UI.
 4. Vagrant Virtual Machine (VM) for firmware and web UI development.
 
 The Vagrant VM comes with a GUI-version of Linux Mint 17.3 and provisions particle-cli, dfu-util, gcc-arm-embedded, nodeJS, npm, and Ruby, posgresql-9.4, vim, and other packages.
 
 Practically everything needed for LEDWax and Particle IoT development is supported with this Vagrant VM.
+
 1. Build LEDWax Photon firmware.  Build any Particle-photon firmware.
 2. Push LEDWax Photon firmware to a Particle Cloud Server.
 3. Build/debug/maintain the LEDWax REST API.
@@ -44,6 +46,7 @@ git submodule update
 
 ## Development Setup
 ### Requirements
+
 - Ubuntu 14+; Mac OS X 10.8+(?)
 - Windows not supported by all site-cookbooks, but it wouldn't take too long to add Windows support.
 - Vagrant 12.x
