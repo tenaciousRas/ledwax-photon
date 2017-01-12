@@ -2,6 +2,11 @@
 
 ##LEDs On the Cloud
 
+<a href="https://community.particle.io/uploads/default/original/2X/4/4d7149100814355296f19e0d60b6b966cdba18d4.png" target="_blank"><img src="https://community.particle.io/uploads/default/original/2X/4/4d7149100814355296f19e0d60b6b966cdba18d4.png" 
+alt="LED control screenshot from Particle Forums" width="450" height="auto" border="10" /></a>
+
+![]()](https://community.particle.io/uploads/default/original/2X/4/4d7149100814355296f19e0d60b6b966cdba18d4.png)
+
 LEDWax is an IoT LED controller with support for PWM LEDs and WS28xx LED Strips.  LEDWax Photon is implemented to run on Particle Photon devices.
 
 LEDWax for Particle Photon has been designed for use with a local cloud, which usually consists of 1+ Photons connected to an RPi running Particle Cloud Server, all connected to a home WiFi network (preferably behind a firewall).  LEDWax is also designed to work with the Particle public cloud.
